@@ -24,7 +24,25 @@ function MainView.Component(self: Types.MainView): GuiBase
             Fusion.New "Frame" {
                 Name = "Topbar",
                 Size = UDim2.new(1, 0, 0, 24),
-                BackgroundColor3 = ThemeManager:GetThemeColorTweened("Foreground")
+                BackgroundColor3 = ThemeManager:GetThemeColorTweened("Foreground"),
+
+                [Fusion.Children] = {
+                    Fusion.New "Frame" {
+                        Name = "Left",
+                        AutomaticSize = Enum.AutomaticSize.X,
+                        Size = UDim2.new(0, 0, 1, 0),
+                        BackgroundTransparency = 1,
+                    },
+
+                    Fusion.New "Frame" {
+                        Name = "Right",
+                        AutomaticSize = Enum.AutomaticSize.X,
+                        AnchorPoint = Vector2.new(1, 0),
+                        Position = UDim2.new(1, 0, 0, 0),
+                        Size = UDim2.new(0, 0, 1, 0),
+                        BackgroundTransparency = 1,
+                    },
+                }
             }
         }
     }
